@@ -11,7 +11,8 @@ include_recipe 'tar'
 
 # download and extract cassandra-mesos
 tar_extract node[:cassandra_mesos][:download_url] do
-	target_dir "#{node['cassandra_mesos']['install_dir']}/cassandra-mesos-#{node['cassandra_mesos']['version']}"
+#	target_dir "#{node['cassandra_mesos']['install_dir']}/cassandra-mesos-#{node['cassandra_mesos']['version']}"
+  target_dir '/opt'
 	creates "#{node['cassandra_mesos']['install_dir']}/cassandra-mesos-#{node['cassandra_mesos']['version']}/bin/cassandra-mesos"
 end
 
