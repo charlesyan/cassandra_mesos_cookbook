@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-inlcude_recipe 'tar'
+include_recipe 'tar'
 
 # download and extract cassandra-mesos
 tar_extract node[:cassandra_mesos][:download_url] do
