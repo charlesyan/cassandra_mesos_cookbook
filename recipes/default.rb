@@ -7,18 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# download cassandra mesos
-remote_file '/tmp/cassandra-mesos.tgz' do
-	source node[:cassandra_mesos][:download_url]
-	action :create_if_missing
-end
-
-bash 'extract_module' do
-  cwd ::File.dirname(node[:cassandra_mesos][:install_dir])
-  code <<-EOH
-    tar xzf /tmp/cassandra-mesos.tgz
-EOH
-  not_if { ::File.exists?(extract_path) }
+# download and extract cassandra-mesos
+tar_extract node[:cassandra_mesos][:download_url] do
+	target_dir "#{node['cassandra_mesos']['install_dir']}/cassandra-mesos-#{node['cassandra_mesos']['version']}"
+	creates "#{node['cassandra_mesos']['install_dir']}/cassandra-mesos-#{node['cassandra_mesos']['version']}/bin/cassandra-mesos"
 end
 
 # setting cassandra-mesos configuration
