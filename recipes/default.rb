@@ -25,11 +25,11 @@ end
 template "#{node['cassandra_mesos']['install_dir']}/cassandra-mesos-#{node['cassandra_mesos']['version']}/conf/mesos.yaml" do
   source 'mesos.yaml.erb'
   variables({
-    :download_url => "#{node['cassandra_mesos']['download_url']}"
-    :master => "#{node['cassandra_mesos']['master']}"
-    :n_nodes => "#{node['cassandra_mesos']['n_nodes']}"
-    :cpu_min => "#{node['cassandra_mesos']['cpu']['min']}"
-    :mem_min => "#{node['cassandra_mesos']['mem']['min']}"
+    :download_url => "#{node['cassandra_mesos']['download_url']}",
+    :master => "#{node['cassandra_mesos']['master']}",
+    :n_nodes => "#{node['cassandra_mesos']['n_nodes']}",
+    :cpu_min => "#{node['cassandra_mesos']['cpu']['min']}",
+    :mem_min => "#{node['cassandra_mesos']['mem']['min']}",
     :disk_min => "#{node['cassandra_mesos']['disk']['min']}"
   })
   mode '0755'
