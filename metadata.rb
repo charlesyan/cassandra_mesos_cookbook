@@ -1,6 +1,6 @@
-name             'chef_cassandra_mesos'
+name             'cassandra_mesos_cookbook'
 maintainer       'Charles Yan'
-maintainer_email 'charlesxyan@gmail.com'
+maintainer_email 'charlesyan@hotmail.com'
 license          'All rights reserved'
 description      'Installs/Configures chef_cassandra_mesos'
 long_description 'Installs/Configures chef_cassandra_mesos'
