@@ -1,4 +1,4 @@
-name             'chef_cassandra_mesos'
+name             'cassandra_mesos_cookbook'
 maintainer       'Charles Yan'
 maintainer_email 'charlesxyan@gmail.com'
 license          'All rights reserved'
