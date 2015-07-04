@@ -1,0 +1,21 @@
+mesos.executor.uri: <%= @download_url %>
+
+# Where the Mesos master is located
+mesos.master.url: <%= @master %>
+
+# Where we can find the Mesos library
+# Typical Linux/Unix Mesos lib path
+java.library.path: '/usr/local/lib/libmesos.so'
+
+# Typical OS X mesos path
+#java.library.path: '/usr/local/lib/libmesos.dylib'
+
+# No of HW nodes we want it to run on
+# Driver will block until we have enough nodes
+# (We can't start multiple Cassandra nodes of the same cluster on the same HW node due to port conflicts)
+cassandra.noOfHwNodes: <%= @n_nodes %>
+
+# Mesos resource requests
+resource.cpus: <%= @min_cpu %>
+resource.mem: <%= @min_mem %>
+resource.disk: <%= @min_disk %>
